@@ -5,24 +5,28 @@ function distance(k){
     }
 };
 
-function time(m){
+function time(m,f){
   if(m<=720){
- 
+  if(f<=840)
   return true
 }
 };
 
-function psuhUps(m){
+function psuhUps(m,f){
   
   if(m>=30){
-
+    return true
+  }
+  if(f>=20){
     return true
   }
 };
 
-function abs(ab){
-if(ab>=35){
-
+function abs(m,f){
+if(m>=35){
+  return true
+};
+if(f>=30){
   return true
 }
 };
@@ -30,11 +34,11 @@ if(ab>=35){
 // function tesTAF reuse the functions above to operate your received parameters.
 function testTAF(gender,km,mn,rp,ab){
 
-  if(gender==='male'&&distance(km)&&time(mn)&&psuhUps(rp)&&abs(ab)){
+  if(gender==='male'&&distance(km)&&time(mn,0)&&psuhUps(rp,0)&&abs(ab,0)){
 
       return true
 
-  }else if(gender==='female'&&distance(km)&&time(mn-120)&&psuhUps(rp+10)&&abs(ab+5)){
+  }else if(gender==='female'&&distance(km)&&time(0,mn)&&psuhUps(0,rp)&&abs(0,ab)){
 
       return true
  
@@ -58,3 +62,6 @@ testTAF('male',24000,720,30,35));
   
 showMessagem( "Candidato passou no teste?: \nresposta: ",
 testTAF('female',24000,840,20,30));
+
+
+module.exports = testTAF;
