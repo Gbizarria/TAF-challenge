@@ -1,6 +1,6 @@
 //the variables became fuctions that operate the values received.
 function distance(k){
-  if(k>=2400){
+  if(k>=24000){
       return true
     }
 };
@@ -32,13 +32,13 @@ if(f>=30){
 };
   
 // function tesTAF reuse the functions above to operate your received parameters.
-function testTAF(gender,km,mn,rp,ab){
+function testTAF(km,mn,gender,rp,ab){
 
-  if(gender==='male'&&distance(km)&&time(mn,0)&&psuhUps(rp,0)&&abs(ab,0)){
+  if(gender==='male'&&distance(km)&&time(mn,null)&&psuhUps(rp,null)&&abs(ab,null)){
 
       return true
 
-  }else if(gender==='female'&&distance(km)&&time(0,mn)&&psuhUps(0,rp)&&abs(0,ab)){
+  }else if(gender==='female'&&distance(km)&&time(null,mn)&&psuhUps(null,rp)&&abs(null,ab)){
 
       return true
  
@@ -58,10 +58,12 @@ function showMessagem(text,func){
 };
 
 showMessagem("Candidato passou no teste?: \nresposta: ",
-testTAF('male',24000,720,30,35));
+testTAF(24000,720,'male',30,35));
   
 showMessagem( "Candidato passou no teste?: \nresposta: ",
-testTAF('female',24000,840,20,30));
+testTAF(24000,840,'female',20,30));
 
 
 module.exports = testTAF;
+
+
